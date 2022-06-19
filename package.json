@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A ghost theme deployer",
   "main": "lib/index.js",
-  "bind": ".bin/cli.js",
+  "bin": ".bin/cli.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w"

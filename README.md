@@ -1,5 +1,5 @@
 # ghostify
-ghostify is a ghost theme deployer that allow you to deploy your ghost the localy and test it without restarting your ghost server
+ghostify is a ghost theme deployer that allow you to deploy your ghost theme localy and test it without restarting your ghost server
 
 ## installation
 ```sh
@@ -26,7 +26,7 @@ $ ghostify <config file path>
 ```
 or
 ```sh
-$ ghostify ghostify -c <file path>
+$ ghostify -c <file path>
 ```
 ### specify the theme base path containing the config file and package.json
 ```sh
