@@ -8,13 +8,24 @@
     "build": "tsc",
     "watch": "tsc -w"
   },
+  "files": [
+    ".bin",
+    "lib",
+    "LICENCE",
+    "package.json",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NemsLucky/ghostify.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["Ghost", "Ghost-Theme", "action-theme-deploy","ghost-theme-deploy"],
+  "author": {
+    "name": "luckynems",
+    "url": "https://github.com/NemsLucky",
+    "email": "pnembot09@gmail.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/NemsLucky/ghostify/issues"
   },
@@ -27,7 +38,6 @@
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.13.0",
-    "@tryghost/errors": "^1.2.14",
     "@tryghost/logging": "2.0.1",
     "adm-zip": "^0.5.9",
     "minimist": "^1.2.6"

@@ -51,6 +51,7 @@ typings/
 .npm
 test.js
 lib
+demo
 
 # Optional eslint cache
 .eslintcache
