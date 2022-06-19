@@ -39,8 +39,9 @@ export default async function deploy(options: Options) {
     let hasError = false
 
     excludes = Array.isArray(excludes) ? excludes : (excludes || "").trim().split(" ");
-    excludes.filter((v) => !!v.trim().length);
+    excludes = excludes.filter((v) => !!v.trim().length);
     excludes.includes("ghostify.json") || excludes.push("ghostify.json")
+    
     excludes = excludes.map((rule) =>
         rule.trim().replace(/[*.]/g, (m) => (m === "*" ? ".*" : "\\."))
     ).join("|");
@@ -51,12 +52,15 @@ export default async function deploy(options: Options) {
         "gi"
     );
 
+    // console.log(excludeReg)
+    // return 
+
     try {
         let zip = new AdmZip()
         zip.addLocalFolder(basePath, undefined, entry=>{
-            let excl = !entry.match(excludeReg)
+            let excl = !!entry.match(excludeReg)
             if(debug && !excl) log.info("adding entry "+entry)
-            return excl
+            return !excl
         })
         zip.writeZip(zipPath, (err)=>{
             if(err){
@@ -75,7 +79,7 @@ export default async function deploy(options: Options) {
             version: "v5.0"
         })
 
-        return api.themes.upload({file: zipPath})
+        return await api.themes.upload({file: zipPath})
         
     } catch (error) {
         return Promise.reject(error)

@@ -19,7 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/NemsLucky/ghostify.git"
   },
-  "keywords": ["Ghost", "Ghost-Theme", "action-theme-deploy","ghost-theme-deploy"],
+  "keywords": [
+    "Ghost",
+    "Ghost-Theme",
+    "action-theme-deploy",
+    "ghost-theme-deploy"
+  ],
   "author": {
     "name": "luckynems",
     "url": "https://github.com/NemsLucky",

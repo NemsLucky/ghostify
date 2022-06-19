@@ -1,6 +1,6 @@
 import minimist from "minimist"
 import { resolve, dirname } from "path"
-import { statSync, existsSync } from "fs"
+import { statSync, existsSync, createWriteStream } from "fs"
 // @ts-ignore
 import log from "@tryghost/logging"
 import deploy from "."
@@ -38,7 +38,7 @@ let basePath: string, pkgPath: string
 
 if (statSync(configPath).isDirectory()) {
     basePath = configPath
-    configPath = resolve("ghostify.json")
+    configPath = resolve(basePath, "ghostify.json")
 } else {
     basePath = dirname(configPath)
 }
@@ -71,12 +71,13 @@ deploy({
     debug
 }).then((res) => {
     let elipsed = ((Date.now() - startTime) / 1000).toFixed(3)
-    if (res.errors) {
+    if (res?.errors) {
         log.error(res.errors)
         return
     }
-    log.debug(res)
+    log.log(res)
     return log.info("deploy finished successfuly withing " + elipsed + " s.")
 }).catch(error => {
+    
     log.error(error)
 })
