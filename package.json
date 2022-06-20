@@ -1,6 +1,6 @@
 {
   "name": "ghostify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A ghost theme deployer",
   "main": "lib/index.js",
   "bin": ".bin/cli.js",
@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.13.0",
-    "@tryghost/logging": "2.0.1",
+    "@tryghost/errors": "^1.2.14",
+    "@tryghost/logging": "2.1.5",
     "adm-zip": "^0.5.9",
     "minimist": "^1.2.6"
   }

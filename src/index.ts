@@ -29,7 +29,7 @@ function rmFile(fpath: string){
             command += `rm -r ${fpath}`
         }
         
-        let res = execSync(command).toString()
+        return execSync(command).toString()
     }
 }
 
@@ -40,7 +40,7 @@ export default async function deploy(options: Options) {
 
     excludes = Array.isArray(excludes) ? excludes : (excludes || "").trim().split(" ");
     excludes = excludes.filter((v) => !!v.trim().length);
-    excludes.includes("ghostify.json") || excludes.push("ghostify.json")
+    excludes.push("ghostify.js(on)?")
     
     excludes = excludes.map((rule) =>
         rule.trim().replace(/[*.]/g, (m) => (m === "*" ? ".*" : "\\."))
