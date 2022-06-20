@@ -1,6 +1,6 @@
 {
   "name": "ghostify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A ghost theme deployer",
   "main": "lib/index.js",
   "bin": ".bin/cli.js",

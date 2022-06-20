@@ -82,7 +82,6 @@ deploy({
         log.error(res.errors)
         return
     }
-    log.log(res)
     return log.info("deploy finished successfuly withing " + elipsed + " s.")
 }).catch(error => {
     if(!errors.utils.isGhostError(error)){

@@ -78,7 +78,7 @@ export default async function deploy(options: Options) {
             key: apiKey,
             version: "v5.0"
         })
-
+        log.info("sending theme "+themeName+".zip ...")
         return await api.themes.upload({file: zipPath})
         
     } catch (error) {
